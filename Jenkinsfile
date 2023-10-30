@@ -9,7 +9,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello, World! Im here  again '
-                echo 'Hell yeah'
+                echo 'Hell yeah !..........................'
+            }
+        }
+        stage('Show Desc') {
+            steps {
+                echo 'Trying Hard rto fetch metrics '
+                echo 'Plz come asap..........................'
             }
         }
     }
