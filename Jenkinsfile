@@ -8,23 +8,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello, World! Im here  again '
+                echo 'Hello, World! Im here again'
                 echo 'Hell yeah !..........................'
             }
         }
         stage('Show Desc') {
             steps {
-                echo 'Trying Hard rto fetch metrics '
+                echo 'Trying Hard to fetch metrics'
                 echo 'Plz come asap..........................'
-            
+            }
         }
     }
     
-     post {
+    post {
         success {
             script {
                 def commitSHA = 'YOUR_SHA'  // You'd typically fetch this dynamically
-                def response = httpRequest url: 'https://app.sleuth.io/api/1/deployments/testtoken/metrics-2/register_deploy',
+                def response = httpRequest url: 'https://app.sleuth.io/api/1/deployments/testtoken/metrics-3/register_deploy',
                                            httpMode: 'POST',
                                            contentType: 'APPLICATION_JSON',
                                            headers: [
@@ -37,5 +37,4 @@ pipeline {
             }
         }
     }
-}
 }
